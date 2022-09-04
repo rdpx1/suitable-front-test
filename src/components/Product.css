@@ -1,0 +1,31 @@
+.product-container{
+    background-color: #444;
+    margin: 8px 0;
+    padding: 15px 20px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    color: #eee;
+    align-items: center;
+    font-weight: 500;
+}
+
+
+
+
+.buttons-holder{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.button-product{
+    height: 30px;
+    width: 30px;
+    background-color: #444;
+    color: chartreuse;
+    font-size: 16px;
+    border: 1px solid chartreuse;
+    border-radius: 50%;
+    cursor: pointer;
+}
