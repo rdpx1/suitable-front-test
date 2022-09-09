@@ -15,21 +15,25 @@ const App = () => {
 
   return (
     <>
-      <AppContext.Provider 
-          value={{ cartItems, setCartItems, 
-            cartItemsValue, setCartItemsValue }}
+      <AppContext.Provider
+        value={{
+          cartItems, setCartItems,
+          cartItemsValue, setCartItemsValue
+        }}
       >
         <div className="app-container">
-          <div className="header-container">
-            <CompanyHeader />
+          <div className="main">
+            <div className="header-container">
+              <CompanyHeader />
+            </div>
+            <div>
+              <h2>Menu</h2>
+            </div>
+            <div className="container-body">
+              <Categories />
+            </div>
+            <ProductsTotal />
           </div>
-          <div>
-            <h2>Menu</h2>
-          </div>
-          <div className="container-body">
-            <Categories />
-          </div>
-          <ProductsTotal />
         </div>
       </AppContext.Provider>
     </>

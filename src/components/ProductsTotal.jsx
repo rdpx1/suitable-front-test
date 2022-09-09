@@ -17,7 +17,6 @@ const ProductsTotal = () => {
                     <ItemsValueChip
                         itemsCount={cartItems}
                         itemsValue={cartItemsValue}
-                        color="secundary"
                     />
                 </div>
                 <Button
@@ -31,6 +30,7 @@ const ProductsTotal = () => {
                         backgroundColor: '#2a573f',
                         height: '40px',
                         fontWeight: 'bold',
+                        whiteSpace: 'nowrap',
                     }}
                 >
                     Pedir agora!

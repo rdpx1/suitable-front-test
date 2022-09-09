@@ -26,7 +26,7 @@ const Categories = () => {
       ]);
 
       handlingData(category.data.results, product.data.results);
-      
+
     }
     getData();
 
@@ -62,7 +62,8 @@ const Categories = () => {
             >
               <AccordionSummary
                 sx={{
-                  color: 'white'
+                  color: 'white',
+                  m: '8',
                 }}
                 expandIcon={
                   <ExpandMoreIcon
@@ -73,7 +74,14 @@ const Categories = () => {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-                <Typography>{category.descricao}</Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "Plus Jakarta Sans",
+                    fontWeight: "bold"
+                  }}
+                >
+                  {category.descricao}
+                </Typography>
               </AccordionSummary>
                 {category.items.map((item, i) => {
                   return (
