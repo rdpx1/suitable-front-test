@@ -2,9 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 15px; */
-    gap: 90px;
-
+    gap: 70px;
     height: 60px;
     width: 100%;
     border-radius: 15px;
@@ -16,7 +14,6 @@
     background-color: #2a573f;
     height: 40px;
     font-weight: 700;
-    /* Tirar transform */
 }
 
 .value-container {

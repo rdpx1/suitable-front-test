@@ -47,8 +47,6 @@ const Categories = () => {
     setFinalProducts(finalCategories);
     setIsRender(true);
   }
-
-  console.log(isRender, finalProducts);
   if (isRender) {
     return (
       <>

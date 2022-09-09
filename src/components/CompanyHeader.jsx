@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 
 import './CompanyHeader.css'
+import AvatarStoryBookExample from './AvatarStoryBookExample';
 
 const CompanyHeader = () => {
   const [headerData, setHeaderData] = useState('');
@@ -20,7 +21,6 @@ const CompanyHeader = () => {
         setHeaderData(null)
       }
     }
-    console.log("passei aqui hue");
     fetchCompanyData();
   }, []);
 
@@ -28,10 +28,10 @@ const CompanyHeader = () => {
   return (
     <>
       <div className="company-intro">
-        <Avatar
-          alt="Logo"
-          src={headerData.logo}
-          sx={{ width: 70, height: 70}}
+        <AvatarStoryBookExample
+          altText="Logo"
+          srcLink={headerData.logo}
+          size="large"
         />
         <h1>{headerData.nome}</h1>
       </div>

@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../context';
 import { numberFormat } from '../numberFormat';
+import AvatarStoryBookExample from './AvatarStoryBookExample';
 
-import Avatar from '@mui/material/Avatar';
+import AccordionDetails from '@mui/material/AccordionDetails';
+
 
 
 import './Product.css'
@@ -30,26 +32,31 @@ const Product = ({ item }) => {
     }
     return (
         <>
-            <div className="product-container">
 
-                <Avatar
-                    alt={item.descricao}
-                    src={item.url_imagem}
-                    sx={{ width: 45, height: 45 }}
-                />
+            <AccordionDetails
+                sx={{ p: '0' }}
+            >
+                <div className="product-container">
 
-                <div className="product-description">
-                    <h3>{item.descricao}</h3>
-                    <span className="product-text">{numberFormat(item.valor_venda)}</span>
+                    <AvatarStoryBookExample
+                        altText="Logo"
+                        srcLink={item.url_imagem}
+                        size="small"
+                    />
+
+                    <div className="product-description">
+                        <h3>{item.descricao}</h3>
+                        <span className="product-text">{numberFormat(item.valor_venda)}</span>
+                    </div>
+                    <div className="buttons-holder">
+                        <button className="button-product" onClick={() => handleOperations('add', item.valor_venda)}>+</button>
+                        <span>
+                            {productCounter}
+                        </span>
+                        <button className="button-product" onClick={() => handleOperations('sub', item.valor_venda)}>-</button>
+                    </div>
                 </div>
-                <div className="buttons-holder">
-                    <button className="button-product" onClick={() => handleOperations('add', item.valor_venda)}>+</button>
-                    <span>
-                        {productCounter}
-                    </span>
-                    <button className="button-product" onClick={() => handleOperations('sub', item.valor_venda)}>-</button>
-                </div>
-            </div>
+            </AccordionDetails>
         </>
     );
 }

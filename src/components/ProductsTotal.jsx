@@ -22,15 +22,15 @@ const ProductsTotal = () => {
                 </div>
                 <Button
                     variant="outlined"
-                    // color="success"
                     size="large"
                     onClick={() => { alert("The demo ends here :)") }}
-                    sx={{ color: 'white', 
-                          borderColor: 'black',
-                          borderRradius: '15px',
-                          backgroundColor: '#2a573f',
-                          height: '40px',
-                          fontWeight: 'bold',
+                    sx={{
+                        color: 'white',
+                        borderColor: 'black',
+                        borderRadius: '15px',
+                        backgroundColor: '#2a573f',
+                        height: '40px',
+                        fontWeight: 'bold',
                     }}
                 >
                     Pedir agora!

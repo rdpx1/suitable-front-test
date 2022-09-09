@@ -12,17 +12,17 @@ const ItemsValueChip = ({ itemsCount, itemsValue }) => {
                 variant="outlined"
                 label={(
                     <section>
-                       <h3>Total: {numberFormat(itemsValue)}</h3>
-                       <h5>Quantidade de itens: {itemsCount}</h5> 
+                        <h3>Total: {numberFormat(itemsValue)}</h3>
+                        <h5>Quantidade de itens: {itemsCount}</h5>
                     </section>
                 )}
                 sx={{
-                    color: 'white'
+                    color: 'white',
+                    height: '40px'
                 }}
             >
             </Chip>
         </>
-
     );
 }
 
