@@ -1,40 +1,34 @@
 import React, { useState } from "react";
+import { AppContext } from './context';
+import "@fontsource/plus-jakarta-sans";
 
 import CompanyHeader from "./components/CompanyHeader";
 import Categories from "./components/Categories";
+import ProductsTotal from "./components/ProductsTotal";
 
 import './App.css';
-import ProductsTotal from "./components/ProductsTotal";
-import ProductList from "./components/ProductList";
 
 const App = () => {
 
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //       const {data} = await axios.get(
-  //         "https://demopizzaria.stbl.com.br/estoque/produtos_app/?format=json"
-  //       )
-  //   }
-  //   fetchProducts();
-  // }, [])
-
+  const [cartItems, setCartItems] = useState(0);
+  const [cartItemsValue, setCartItemsValue] = useState(0);
 
   return (
     <>
-      <div className="container">
-        <div className="header-container">
-          <CompanyHeader />
-        </div>
-        <div className="container-body">
-          <Categories />
-        </div>
-        <div className="container-test">
-          <ProductList />
-        </div>
-        <div className="product-sum">
-          <ProductsTotal />
-        </div>
-      </div>
+      <AppContext.Provider value={{ cartItems, setCartItems, cartItemsValue, setCartItemsValue }}>
+        <div className="app-container">
+            <div className="header-container">
+              <CompanyHeader />
+            </div>
+            <div>
+              <h2>Menu</h2>
+            </div>
+            <div className="container-body">
+              <Categories />
+            </div>
+            <ProductsTotal />
+          </div>
+      </AppContext.Provider>
     </>
   );
 }

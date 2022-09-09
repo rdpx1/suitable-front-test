@@ -5,7 +5,11 @@
     display: flex;
     border-radius: 5px;
     justify-content: space-between;
-    color: #eee;
     align-items: center;
 
+}
+
+
+.MuiAccordion-root{
+    background-color: #222 !important
 }

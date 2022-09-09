@@ -1,21 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context';
+
+import Button from '@mui/material/Button';
+import ItemsValueChip from './ItemsValueChip';
 
 import './ProductsTotal.css'
 
 const ProductsTotal = () => {
 
-    // TODO: Vai receber o valor e a quantidade de itens
-
+    const { cartItems, cartItemsValue } = useContext(AppContext);
 
     return (
         <>
-            <h1>Total de produtos(0)</h1>
-            <h2>Valor: R$100,00</h2>
-        </>
+            <div className="product-sum-container">
+                <div className="value-container">
+                    <ItemsValueChip
+                        itemsCount={cartItems}
+                        itemsValue={cartItemsValue}
+                        color="secundary"
+                    />
+                </div>
+                <Button
+                    variant="outlined"
+                    // color="success"
+                    size="large"
+                    onClick={() => { alert("The demo ends here :)") }}
+                    sx={{ color: 'white', 
+                          borderColor: 'black',
+                          borderRradius: '15px',
+                          backgroundColor: '#2a573f',
+                          height: '40px',
+                          fontWeight: 'bold',
+                    }}
+                >
+                    Pedir agora!
+                </Button>
+            </div>
 
+        </>
     );
 }
 
+
 export default ProductsTotal;
+
+
 
 
