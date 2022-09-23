@@ -1,7 +1,7 @@
 import React from 'react';
 import { numberFormat } from '../numberFormat';
 
-import Chip from '@mui/material/Chip';
+import Chip from '@material-ui/core/Chip';
 
 
 const ItemsValueChip = ({ itemsCount, itemsValue }) => {
@@ -16,10 +16,9 @@ const ItemsValueChip = ({ itemsCount, itemsValue }) => {
                         <h5>Quantidade de itens: {itemsCount}</h5>
                     </section>
                 )}
-                sx={{
-                    color: 'white',
-                    height: '40px'
-                }}
+                    // color: 'white',
+                    // height: '40px'
+                    
             >
             </Chip>
         </>

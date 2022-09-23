@@ -1,41 +1,44 @@
-import React, { useState } from "react";
-import { AppContext } from './context';
+// import { AppContext } from './context';
 import "@fontsource/plus-jakarta-sans";
 
-import CompanyHeader from "./components/CompanyHeader";
-import Categories from "./components/Categories";
-import ProductsTotal from "./components/ProductsTotal";
+import Paper from '@material-ui/core/Paper';
 
 import './App.css';
+import Header from './stories/molecules/Header/Header'
+import Footer from './stories/molecules/Footer/Footer'
+
+import ButtonAction from './stories/molecules/ButtonAction/ButtonAction';
+
+// import { useState } from "react";
 
 const App = () => {
 
-  const [cartItems, setCartItems] = useState(0);
-  const [cartItemsValue, setCartItemsValue] = useState(0);
+  // const [cartItems, setCartItems] = useState(0);
+  // const [cartItemsValue, setCartItemsValue] = useState(0);
+
+  // const classes = useStyles();
 
   return (
     <>
-      <AppContext.Provider
-        value={{
-          cartItems, setCartItems,
-          cartItemsValue, setCartItemsValue
-        }}
-      >
+      <Paper>
         <div className="app-container">
-          <div className="main">
-            <div className="header-container">
-              <CompanyHeader />
-            </div>
-            <div>
-              <h2>Menu</h2>
-            </div>
-            <div className="container-body">
-              <Categories />
-            </div>
-            <ProductsTotal />
-          </div>
+          <Header />
+
+
+
+            {/* <AppBar position="static" className={classes.root}>
+          <Toolbar>
+            <Typography variant="h6" className={classes.title}>
+              Colocar o nome da empresa API
+            </Typography>
+          </Toolbar>
+        </AppBar> */}
+          {/* </div> */}
+
+          <ButtonAction />
+          <Footer/>
         </div>
-      </AppContext.Provider>
+      </Paper>
     </>
   );
 }

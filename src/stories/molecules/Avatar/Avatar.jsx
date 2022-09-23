@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Avatar from '@mui/material/Avatar';
+import Avatar from '@material-ui/core/Avatar';
 
 
 const AvatarStoryBookExample = ({ altText, srcLink, size = "medium" }) => {

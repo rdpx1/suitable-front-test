@@ -1,6 +1,22 @@
-.product-sum-container {
+import React from 'react';
+import { makeStyles } from '@material-ui/core';
+
+
+const useStyle = makeStyles((theme) => {
+
+    return {
+        root: {
+            backgroundColor: '#00A17C',
+        }
+
+    }
+})
+export default useStyle;
+
+
+/* .product-sumStyles-(theme)ontainer {
     position: absolute;
-    left: 50%;
+    left: 50%;)
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -26,5 +42,5 @@
     display: block;
     padding: 0;
     margin: 0;
-    font-weight: 700;
-}
+    font-weight: 700; */
+/* } */

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Typography from '@mui/material/Typography';
-import CircularProgress from '@mui/material/CircularProgress';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import './Categories.css'
-import Product from './Product.jsx';
+import Product from '../stories/atoms/Product.jsx';
 
 axios.defaults.baseURL = 'https://demopizzaria.stbl.com.br/estoque/';
 
@@ -54,31 +54,23 @@ const Categories = () => {
           return (
             <Accordion
               key={index}
-              sx={{
-                color: 'white',
-                background: '#222',
-                p: '0',
-              }}
+                // color: 'white',
+                // background: '#222',
+                // p: '0',
             >
               <AccordionSummary
-                sx={{
-                  color: 'white',
-                  m: '8',
-                }}
+                  // color: 'white',
+                  // m: '8',
                 expandIcon={
                   <ExpandMoreIcon
-                    sx={{
-                      color: 'white'
-                    }}
+                      // color: 'white'
                   />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
                 <Typography
-                  sx={{
-                    fontFamily: "Plus Jakarta Sans",
-                    fontWeight: "bold"
-                  }}
+                    // fontFamily: "Plus Jakarta Sans",
+                    // fontWeight: "bold"
                 >
                   {category.descricao}
                 </Typography>
