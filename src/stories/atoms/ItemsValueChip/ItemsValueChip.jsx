@@ -1,5 +1,5 @@
 import React from 'react';
-import { numberFormat } from '../numberFormat';
+import { numberFormat } from '../../../numberFormat';
 
 import Chip from '@material-ui/core/Chip';
 

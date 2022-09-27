@@ -7,14 +7,16 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import './Categories.css'
-import Product from '../stories/atoms/Product.jsx';
+import useStyles from './CategoriesStyle'
+import Product from '../../molecules/Product/Product';
+import { AccordionDetails } from '@material-ui/core';
 
 axios.defaults.baseURL = 'https://demopizzaria.stbl.com.br/estoque/';
 
-const Categories = () => {
+const Categories = ({ countTotalItems }) => {
 
-  const finalCategories = [];
+  const classes = useStyles();
+
   const [isRender, setIsRender] = useState(false);
   const [finalProducts, setFinalProducts] = useState([]);
 
@@ -30,21 +32,23 @@ const Categories = () => {
     }
     getData();
 
+    console.log("chamei aqui");
   }, []);
 
   const handlingData = (categories, products) => {
 
-    for (let index = 0; index < categories.length; index++) {
-      finalCategories.push(categories[index]);
-      finalCategories[index].items = [];
 
-      for (let i = 0; i < products.length; i++) {
-        if (products[i].categoria_id === finalCategories[index].id && products[i].valor_venda > 0) {
-          finalCategories[index].items.push(products[i]);
-        }
-      }
-    }
-    setFinalProducts(finalCategories);
+    categories.map((category, index) => {
+
+      category.items =
+        products.filter(product =>
+          product.categoria_id === category.id
+          &&
+          product.valor_venda > 0
+        );
+    })
+
+    setFinalProducts(categories);
     setIsRender(true);
   }
   if (isRender) {
@@ -54,35 +58,30 @@ const Categories = () => {
           return (
             <Accordion
               key={index}
-                // color: 'white',
-                // background: '#222',
-                // p: '0',
             >
               <AccordionSummary
-                  // color: 'white',
-                  // m: '8',
                 expandIcon={
                   <ExpandMoreIcon
-                      // color: 'white'
                   />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
               >
                 <Typography
-                    // fontFamily: "Plus Jakarta Sans",
-                    // fontWeight: "bold"
+                  className={classes.accordionTextDetails}
                 >
                   {category.descricao}
                 </Typography>
               </AccordionSummary>
-                {category.items.map((item, i) => {
-                  return (
+              {category.items.map((item, i) => {
+                return (
+                  <AccordionDetails className={classes.productList}>
                     <Product
                       item={item}
                       key={i}
+                      countTotalItems={countTotalItems}
+
                     />
-                  )
-                })}
+                  </AccordionDetails>
+                )
+              })}
             </Accordion>
           )
         })}

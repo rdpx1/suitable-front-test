@@ -5,20 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-import './CompanyHeader.css'
+import './CompanyStyle.js'
 import AvatarStoryBookExample from './AvatarStoryBookExample';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
 
 
 const CompanyHeader = () => {

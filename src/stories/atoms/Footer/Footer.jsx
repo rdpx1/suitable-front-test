@@ -5,11 +5,9 @@ import Typography from '@material-ui/core/Typography';
 
 import useStyles from './FooterStyle';
 
-
-
 const Footer = ({
-  totalProducts,
-  valueProducts
+  // totalProducts,
+  // valueProducts
 }) => {
 
     const classes = useStyles();
@@ -18,10 +16,16 @@ const Footer = ({
         <>
         <AppBar position="static" className={classes.root}>
           <Toolbar>
-            <Typography variant="h6" className={classes.title}>
+            <Typography 
+              variant="h6" 
+              className={classes.cartItems}
+            >
               Carrinho(0)
             </Typography>
-            <Typography variant="h6" className={classes.title}>
+            <Typography 
+              variant="h6" 
+              className={classes.cartValue}
+            >
               R$120,00
             </Typography>
           </Toolbar>

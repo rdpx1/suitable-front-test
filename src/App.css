@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
 * {
-  font-family: "Plus Jakarta Sans";
+  font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -10,8 +10,9 @@ body,
   height: 100%;
 }
 
-.app-container {
+.container-holder{
   max-width: 500px;
+  min-height: 100vh;
   height: 100%;
   overflow: auto;
   border-radius: 10px;
@@ -21,6 +22,7 @@ body,
   margin: 0 auto;
 }
 
+/* 
 .main {
   position: relative;
   border: 2px solid #eee;
@@ -28,13 +30,13 @@ body,
   margin: 15px;
   padding: 15px;
   height: calc(100% - 64px);
-}
+} */
 
-.container-body {
+/* .container-body {
   display: block;
   height: calc(100% - 300px);
   overflow: auto;
-}
+} */
 
 
 @media (max-height: 667px) {
