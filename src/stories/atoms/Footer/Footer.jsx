@@ -6,8 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import useStyles from './FooterStyle';
 
 const Footer = ({
-  // totalProducts,
-  // valueProducts
+  productQuantity,
+  productTotalValue
 }) => {
 
     const classes = useStyles();
@@ -20,13 +20,13 @@ const Footer = ({
               variant="h6" 
               className={classes.cartItems}
             >
-              Carrinho(0)
+              Carrinho({productQuantity})
             </Typography>
             <Typography 
               variant="h6" 
               className={classes.cartValue}
             >
-              R$120,00
+              {productTotalValue}            
             </Typography>
           </Toolbar>
         </AppBar>

@@ -7,14 +7,28 @@ import Footer from '../../../stories/atoms/Footer/Footer';
 import Cardapio from '../../../stories/atoms/Cardapio/Cardapio';
 import Categories from '../../../stories/organisms/Categories/Categories';
 import { useState } from 'react';
-// import useCartCounter from '../../../hooks/useCartCounter';
-// import { ProductContext } from '../../../context';
+import useCart from '../../../hooks/useCart';
+import useProduct from '../../../hooks/useProduct';
+
 
 const ComponentPage = (
-    
+
 ) => {
 
     const classes = useStyles();
+    
+    const {
+        cart,
+        count,
+        totalValue,
+        addItem,
+        removeItem
+    } = useCart();
+
+    // const {
+    //     products
+    // } = useProduct();
+
 
     return (
         <>
@@ -23,14 +37,15 @@ const ComponentPage = (
                 <Cardapio
                     text="Cardápio"
                 />
-                {/* <ProductContext.Provider> */}
-                <Categories 
-                    // countTotalItems={countTotalItems}
-                />
-                <Footer 
-                    // countTotalItems={countTotalItems}
-                />
-                {/* </ProductContext.Provider> */}
+                {/* <Categories
+                    products={products}
+                    addItem={addItem}
+                    removeItem={removeItem}
+                /> */}
+                {/* <Footer
+                    productQuantity={count}
+                    productsTotalValue={totalValue}
+                /> */}
             </Paper>
         </>
     );

@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => {
         },
         productList: {
             padding: "0px 16px !important",
-            "& .Mui-expanded": {
+            "&.Mui-expanded": {
                 minHeight: "72px",
                 margin: "0",
             },

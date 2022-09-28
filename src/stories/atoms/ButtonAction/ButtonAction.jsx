@@ -1,12 +1,14 @@
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import useStyles from "./ButtonActionStyle"
+import PropTypes from 'prop-types';
+
+import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 
 const ButtonAction = ({
   type,
-  handleQuantityChange
+  handleQuantityChange,
 }) => {
   const classes = useStyles();
 
@@ -26,7 +28,11 @@ const ButtonAction = ({
   );
 }
 
-
+ButtonAction.propTypes = {
+  type: PropTypes.string,
+  // src: PropTypes.string,
+  // size: PropTypes.oneOf(["small", "medium", "large"]),
+}
 
 export default ButtonAction;
 

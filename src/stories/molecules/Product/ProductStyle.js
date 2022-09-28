@@ -28,10 +28,16 @@ const useStyles = makeStyles((theme) => {
             maxHeight: "60px",
             fontSize: "16px",
         },
-        valueDescription:{
+        valueDescription: {
             fontSize: "0.8rem",
             fontWeight: "400",
-
+        },
+        buttons: {
+            background: "rgba(0, 0, 0, 0.54)",
+            borderRadius: "50%",
+            color: "#eee",
+            width: "20px",
+            height: "20px"
         }
     }
 

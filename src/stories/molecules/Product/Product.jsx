@@ -1,55 +1,57 @@
-// import React, { useState, useContext } from 'react';
-// import { AppContext } from '../../../context';
-
-import ButtonAction from '../../atoms/ButtonAction/ButtonAction';
-import { Typography } from '@material-ui/core';
-
 import { numberFormat } from '../../../numberFormat';
 import useStyles from './ProductStyle.js'
-import useCartCounter from '../../../hooks/useCartCounter';
 
-const Product = ( {item} ) => {
+import { Typography } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+
+
+const Product = ({
+    item,
+    addItem,
+    removeItem,
+    productQuantity
+}) => {
 
     const classes = useStyles();
-    const {
-        count, 
-        value, 
-        addItem, 
-        removeItem
-    } = useCartCounter();
+
+
 
     return (
         <>
             <div className={classes.productContainer}>
                 <div>
-                    <Typography 
+                    <Typography
                         variant="h6"
                         className={classes.productDescription}
                     >
                         {item.descricao}
                     </Typography>
-                    <Typography 
-                        variant="h6" 
+                    <Typography
+                        variant="h6"
                         className={classes.valueDescription}>
-                            {numberFormat(item.valor_venda)}
+                        {numberFormat(item.valor_venda)}
                     </Typography>
                 </div>
                 <div className={classes.buttonHolder}>
-                    <ButtonAction
-                        type="add"
-                        handleQuantityChange={addItem}
-                    />
+                        <Button
+                            className={classes.buttons}
+                            startIcon={<AddIcon />}
+                            onClick={() => addItem(item)}
+                        />
                     <Typography
                         className={classes.productDescription}
-                        variant="h6"> {count}
+                        variant="h6"> {productQuantity ?? 0}
                     </Typography>
-                    <ButtonAction
-                        type="remove"
-                        handleQuantityChange={removeItem}
+                
+                    <Button
+                        className={classes.buttons}
+                        startIcon={<RemoveIcon />}
+                        onClick={() => removeItem(item)}
                     />
                 </div>
             </div>
-
         </>
     );
 }

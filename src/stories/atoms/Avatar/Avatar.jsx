@@ -1,29 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// import React from 'react';
+// import PropTypes from 'prop-types';
 
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 
-import useStyles from './AvatarStyle';
-
-
-const AvatarStoryBookExample = ({ altText, srcLink, size = "medium"}) => {
-
-    const classes = useStyles(size);
-
-    return (
-        <Avatar
-            alt={altText}
-            src={srcLink}
-            style={classes.root}
-        />
-    );
-}
+// import useStyles from './AvatarStyle';
 
 
-AvatarStoryBookExample.propTypes = {
-    alt: PropTypes.string,
-    src: PropTypes.string,
-    size: PropTypes.oneOf(["small", "medium", "large"]),
-}
+// const Avatar = ({ altText, srcLink, size = "medium"}) => {
 
-export default AvatarStoryBookExample;
+//     const classes = useStyles(size);
+
+//     return (
+//         <Avatar
+//             alt={altText}
+//             src={srcLink}
+//             style={classes.root}
+//         />
+//     );
+// }
+
+
+// Avatar.propTypes = {
+//     alt: PropTypes.string,
+//     src: PropTypes.string,
+//     size: PropTypes.oneOf(["small", "medium", "large"]),
+// }
+
+// export default Avatar;

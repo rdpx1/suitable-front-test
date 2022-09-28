@@ -7,19 +7,16 @@ export default function useHeaderData() {
     const { callFetch } = useFetch();
 
     
-    const handlingRequestHeader = async () => {
+    // const handlingRequestHeader = async () => {
 
-        const { results } = await callFetch('https://demopizzaria.stbl.com.br/core/empresa_personal_app/?format=json');
+    //     const { results } = await callFetch('https://demopizzaria.stbl.com.br/core/empresa_personal_app/?format=json')
+    //         .then(setHeaderData(results));
+        
+    // }
 
-        console.log(results);
-    }
-
-    useEffect(() => {
-        handlingRequestHeader()
-    }, [])
+    // useEffect(() => {
+    //     handlingRequestHeader()
+    // }, [])
 
     return { headerData };
-    
 }
- 
-// export default useProductsData;
