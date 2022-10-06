@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
     return {
 
         productContainer: {
@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => {
             alignItems: "center",
             height: "48px",
             gap: "10px",
+            
         },
         buttonHolder: {
             display: "flex",
@@ -39,6 +40,7 @@ const useStyles = makeStyles((theme) => {
             width: "20px",
             height: "20px"
         }
+        
     }
 
 });

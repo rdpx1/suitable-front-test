@@ -3,12 +3,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+import { numberFormat } from '../../../numberFormat';
+import { FooterProps } from './Footer.types';
+
 import useStyles from './FooterStyle';
 
 const Footer = ({
-  productQuantity,
-  productTotalValue
-}) => {
+  totalProductQuantity,
+  totalValue
+}:FooterProps) => {
 
     const classes = useStyles();
 
@@ -20,13 +23,13 @@ const Footer = ({
               variant="h6" 
               className={classes.cartItems}
             >
-              Carrinho({productQuantity})
+              Carrinho({totalProductQuantity})
             </Typography>
             <Typography 
               variant="h6" 
               className={classes.cartValue}
             >
-              {productTotalValue}            
+              {numberFormat(totalValue) ?? 0}
             </Typography>
           </Toolbar>
         </AppBar>
