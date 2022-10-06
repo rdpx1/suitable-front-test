@@ -18,7 +18,6 @@
 //             // item={item}
 //             // addItem={addItem}
 //             // removeItem={removeItem}
-//             // getProductQuantity={getProductQuantity}
 //         />)
 // }
 

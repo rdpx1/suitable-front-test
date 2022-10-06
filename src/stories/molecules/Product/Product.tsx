@@ -17,7 +17,6 @@ const Product = ({
 
   const classes = useStyles();
 
-  console.log(item);
   return (
     <>
       <div className={classes.productContainer}>
