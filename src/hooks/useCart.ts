@@ -1,7 +1,6 @@
 import { useState, useMemo } from "react";
 
 export default function useCart() {
-  
   type ProductProps = {
     id: number;
     valor_venda: number;
@@ -9,17 +8,16 @@ export default function useCart() {
 
   const [cart, setCart] = useState([]);
   const totalProductQuantity: any = useMemo(() => {
-    return (
-      cart.reduce((total, currentItem) => total + currentItem.quantity, 0)
-    )
-  }, [cart])
+    return cart.reduce((total, currentItem) => total + currentItem.quantity, 0);
+  }, [cart]);
 
   const totalValue: any = useMemo(() => {
-    return (
-      cart.reduce((total, currentItem) => total + currentItem.valor_venda * currentItem.quantity, 0)
-    )
-  }, [cart])
-  
+    return cart.reduce(
+      (total, currentItem) =>
+        total + currentItem.valor_venda * currentItem.quantity,
+      0
+    );
+  }, [cart]);
 
   const addItem = (product: ProductProps) => {
     setCart((prevCart) => {
@@ -28,7 +26,7 @@ export default function useCart() {
       } else {
         return prevCart.map((item) => {
           if (item.id === product.id) {
-            return {...item, quantity: item.quantity + 1};
+            return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
           }
@@ -36,7 +34,7 @@ export default function useCart() {
       }
     });
   };
-  
+
   const removeItem = (product: ProductProps) => {
     setCart((prevCart) => {
       if (prevCart.find((item) => item.id === product.id)?.quantity === 1) {
@@ -53,9 +51,8 @@ export default function useCart() {
     });
   };
 
-  // const getProductQuantity = (product: ProductProps) => 
+  // const getProductQuantity = (product: ProductProps) =>
   //   cart.find(item => item.id === product.id)?.quantity;
-  
 
   return {
     cart,
@@ -65,5 +62,4 @@ export default function useCart() {
     removeItem,
     // getProductQuantity,
   };
-
 }

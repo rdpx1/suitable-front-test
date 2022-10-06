@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import { CircularProgress } from "@material-ui/core";
 
 import { CategoriesProps } from "./Categories.types";
-
 import Product from "../../molecules/Product/Product";
 
 import useStyles from "./CategoriesStyle";
@@ -18,9 +17,8 @@ const Categories = ({
   loading,
   addItem,
   removeItem,
-}:CategoriesProps) => {
+}: CategoriesProps) => {
   const classes = useStyles();
-
 
   return loading ? (
     <CircularProgress />
