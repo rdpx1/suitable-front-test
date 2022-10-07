@@ -1,8 +1,6 @@
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(() => {
-  return {
-   
+const useStyles = makeStyles((theme) => ({  
     accordionDetails: {
       "&.Mui-expanded": {
         minHeight: 0,
@@ -18,12 +16,17 @@ const useStyles = makeStyles(() => {
       margin: "0px",
     },
     productList: {
-      padding: "0px 16px !important",
+      padding: "0px 26px 8px 16px !important",
       "&.Mui-expanded": {
         minHeight: "72px",
         margin: "0",
       },
     },
-  };
-});
+    expandedIcon: {
+      "& .MuiIconButton-edgeEnd":{
+        marginRight: theme.spacing(-0.25)
+      },
+    },
+  }));
+
 export default useStyles;

@@ -4,8 +4,6 @@ const useStyles = makeStyles((theme) => {
 
     return {
         root: {
-            flexGrow: 1,
-            backgroundColor: '#00A17C',
             height: '48px',
           },
           toolbar:{

@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { Button } from '@material-ui/core';
 
 import { numberFormat } from '../../../numberFormat';
 import { FooterProps } from './Footer.types';
@@ -17,7 +18,10 @@ const Footer = ({
 
     return (
         <>
-        <AppBar position="static" className={classes.root}>
+        <AppBar 
+          position="static" 
+          className={classes.footerToolbar}
+        >
           <Toolbar>
             <Typography 
               variant="h6" 
@@ -25,12 +29,11 @@ const Footer = ({
             >
               Carrinho({totalProductQuantity})
             </Typography>
-            <Typography 
-              variant="h6" 
+            <Button
               className={classes.cartValue}
             >
               {numberFormat(totalValue) ?? 0}
-            </Typography>
+            </Button>
           </Toolbar>
         </AppBar>
         </>

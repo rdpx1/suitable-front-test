@@ -6,6 +6,8 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import { CircularProgress } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
 import { CategoriesProps } from "./Categories.types";
 import Product from "../../molecules/Product/Product";
@@ -26,9 +28,18 @@ const Categories = ({
     <>
       {products.map((category: any, index: number) => {
         return (
-          <Accordion key={index} className={classes.accordionDetails}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography className={classes.accordionTextDetails}>
+          <div>
+          <Accordion 
+            key={index} 
+            className={classes.accordionDetails}
+          >
+            <AccordionSummary 
+              expandIcon={<ExpandMoreIcon />}
+              className={classes.expandedIcon}
+            >
+              <Typography 
+                className={classes.accordionTextDetails}
+              >
                 {category.descricao}
               </Typography>
             </AccordionSummary>
@@ -44,7 +55,9 @@ const Categories = ({
                 </AccordionDetails>
               );
             })}
+            <Divider />
           </Accordion>
+          </div>
         );
       })}
     </>

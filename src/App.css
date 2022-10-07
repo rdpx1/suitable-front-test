@@ -8,11 +8,12 @@ html,
 body,
 #root {
   height: 100%;
+  min-height: calc(100vh - 70px);
 }
 
 .container-holder{
   max-width: 500px;
-  min-height: 100vh;
+  /* min-height: calc(100vh - 40px); */
   height: 100%;
   overflow: auto;
   border-radius: 10px;
@@ -21,23 +22,6 @@ body,
   /* background-size: cover; */
   margin: 0 auto;
 }
-
-/* 
-.main {
-  position: relative;
-  border: 2px solid #eee;
-  border-radius: 10px;
-  margin: 15px;
-  padding: 15px;
-  height: calc(100% - 64px);
-} */
-
-/* .container-body {
-  display: block;
-  height: calc(100% - 300px);
-  overflow: auto;
-} */
-
 
 @media (max-height: 667px) {
   .container-body {

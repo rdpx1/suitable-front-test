@@ -1,9 +1,10 @@
 import React from "react";
 import { numberFormat } from "../../../numberFormat";
-import useStyles from "./ProductStyle.js";
+import useStyles from "./ProductStyle";
 
 import { Typography } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
+
 
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
@@ -21,10 +22,14 @@ const Product = ({
     <>
       <div className={classes.productContainer}>
         <div>
-          <Typography variant="h6" className={classes.productDescription}>
+          <Typography 
+            variant="subtitle1"
+          >
             {item.descricao}
           </Typography>
-          <Typography variant="h6" className={classes.valueDescription}>
+          <Typography 
+            variant="caption" 
+          >
             {numberFormat(item.valor_venda)}
           </Typography>
         </div>
@@ -36,7 +41,9 @@ const Product = ({
             <AddIcon/>
           </IconButton>
               
-          <Typography className={classes.productDescription} variant="h6">
+          <Typography 
+            className={classes.productDescription} 
+            variant="h6">
             {item.quantity ? item.valor_venda * item.quantity : 0}
           </Typography>
 

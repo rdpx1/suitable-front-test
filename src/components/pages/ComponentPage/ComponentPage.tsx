@@ -1,4 +1,3 @@
-import React from 'react';
 import useStyles from './ComponentPageStyle';
 
 import Paper from '@material-ui/core/Paper';
