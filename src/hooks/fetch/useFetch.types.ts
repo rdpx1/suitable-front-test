@@ -1,5 +1,4 @@
-
 export type Fetcher = (
   path: string,
-  method?: string,
+  method?: "GET" | "POST" ,
 ) => any;

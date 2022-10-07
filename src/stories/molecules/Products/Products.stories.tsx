@@ -2,14 +2,14 @@
 
 // import { Story } from "@storybook/react";
 // import Product from './Product';
-// import { ProductProps } from './Product.types';
+// import { Product } from './Product.types';
 
 // export default {
 //     title: "Product",
 //     component: Product
 // }
 
-// const Template: Story<ProductProps> = (args) => {
+// const Template: Story<Product> = (args) => {
 
 
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -9,7 +8,7 @@ const useStyles = makeStyles((theme) => {
       padding: "8px 12px",
     },
     cardapioText: {
-      color: "#00A17C",
+      color: theme.palette.primary.main,
       fontWeight: 500,
       fontSize: "20px",
     },

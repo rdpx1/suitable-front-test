@@ -1,5 +1,3 @@
-import React from "react";
-
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -7,10 +5,12 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import { CircularProgress } from "@material-ui/core";
 import { Divider } from "@material-ui/core";
-import { Container } from "@material-ui/core";
 
+import { CardapioProps } from "../../atoms/Cardapio/Cardapio.types";
 import { CategoriesProps } from "./Categories.types";
-import Product from "../../molecules/Product/Product";
+import { Product } from "../../../hooks/cart/useCart.types";
+
+import Products from "../../molecules/Products/Products";
 
 import useStyles from "./CategoriesStyle";
 
@@ -19,44 +19,41 @@ const Categories = ({
   loading,
   addItem,
   removeItem,
-}: CategoriesProps) => {
+  getProductQuantity
+}: CardapioProps) => {
   const classes = useStyles();
 
   return loading ? (
     <CircularProgress />
   ) : (
     <>
-      {products.map((category: any, index: number) => {
+      {products.map((category: CategoriesProps, index: number) => {
         return (
           <div>
-          <Accordion 
-            key={index} 
-            className={classes.accordionDetails}
-          >
-            <AccordionSummary 
-              expandIcon={<ExpandMoreIcon />}
-              className={classes.expandedIcon}
-            >
-              <Typography 
-                className={classes.accordionTextDetails}
+            <Accordion key={index} className={classes.accordionDetails}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                className={classes.expandedIcon}
               >
-                {category.descricao}
-              </Typography>
-            </AccordionSummary>
-            {category.item.map((item: any) => {
-              return (
-                <AccordionDetails className={classes.productList}>
-                  <Product
-                    item={item}
-                    key={item.id}
-                    addItem={addItem}
-                    removeItem={removeItem}
-                  />
-                </AccordionDetails>
-              );
-            })}
-            <Divider />
-          </Accordion>
+                <Typography className={classes.accordionTextDetails}>
+                  {category.descricao}
+                </Typography>
+              </AccordionSummary>
+              {category.item.map((item: Product) => {
+                return (
+                  <AccordionDetails className={classes.productList}>
+                    <Products
+                      item={item}
+                      key={item.id}
+                      addItem={addItem}
+                      removeItem={removeItem}
+                      getProductQuantity={getProductQuantity}
+                    />
+                  </AccordionDetails>
+                );
+              })}
+              <Divider />
+            </Accordion>
           </div>
         );
       })}

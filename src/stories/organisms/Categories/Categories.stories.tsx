@@ -9,25 +9,25 @@ export default {
   component: Categories,
 };
 
-const Template: Story<CategoriesProps> = (args) => {
-  return <Categories {...args} />;
-};
+// const Template: Story<CategoriesProps> = (args) => {
+//   // return <Categories {...args} />;
+// };
 
-export const Default = Template.bind({});
-Default.args = {
-  products: [
-    {
-      descricao: "Bebidas🥤",
-      item: [
-        {
-          descricao: "Coca cola lata 350ml",
-          valor_venda: 4,
-        },
-        {
-          descricao: "Coca cola 2L",
-          valor_venda: 10,
-        },
-      ],
-    },
-  ],
-};
+// export const Default = Template.bind({});
+// Default.args = {
+//   products: [
+//     {
+//       descricao: "Bebidas🥤",
+//       item: [
+//         {
+//           descricao: "Coca cola lata 350ml",
+//           valor_venda: 4,
+//         },
+//         {
+//           descricao: "Coca cola 2L",
+//           valor_venda: 10,
+//         },
+//       ],
+//     },
+//   ],
+// };

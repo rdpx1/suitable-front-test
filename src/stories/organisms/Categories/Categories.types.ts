@@ -1,6 +1,7 @@
+import { Product } from "../../../hooks/cart/useCart.types";
+
 export interface CategoriesProps {
-  products: any;
-  loading: boolean;
-  addItem: (item: object) => void;
-  removeItem: (item: object) => void;
+  descricao: string;
+  item?: Product[];
+  id?: number
 }

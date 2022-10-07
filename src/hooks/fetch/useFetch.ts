@@ -1,23 +1,17 @@
-import { Fetcher } from "./useFetch.d";
+import { Fetcher } from "./useFetch.types";
 
 const useFetch = () => {
-
-  const callFetch: Fetcher = (
-    path,
-    method
-  ) => {
+  const callFetch: Fetcher = (path, method) => {
     try {
       const response = fetch(path, { method });
-      return response
-        .then((res) => {
-          return res.json();
+      return response.then((res) => {
+        return res.json();
       });
     } catch (e) {
-      console.error('The callFetch hook failed: ' + e);
+      console.error("The callFetch hook failed: " + e);
     }
-  }
-
-  return { callFetch }
-}
+  };
+  return { callFetch };
+};
 
 export default useFetch;
