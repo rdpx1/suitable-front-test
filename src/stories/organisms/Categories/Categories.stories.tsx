@@ -1,33 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Story } from "@storybook/react";
 import Categories from "./Categories";
-import { CategoriesProps } from "./Categories.types";
+import { CardapioProps } from "../../atoms/Cardapio/Cardapio.types";
+import useCart from "../../../hooks/cart/useCart";
 
 export default {
   title: "Categories",
   component: Categories,
 };
 
-// const Template: Story<CategoriesProps> = (args) => {
-//   // return <Categories {...args} />;
-// };
+const Template: Story<CardapioProps> = (args) => {
 
-// export const Default = Template.bind({});
-// Default.args = {
-//   products: [
-//     {
-//       descricao: "Bebidas🥤",
-//       item: [
-//         {
-//           descricao: "Coca cola lata 350ml",
-//           valor_venda: 4,
-//         },
-//         {
-//           descricao: "Coca cola 2L",
-//           valor_venda: 10,
-//         },
-//       ],
-//     },
-//   ],
-// };
+  const { cart, addItem, removeItem } = useCart();
+
+  return <Categories addItem={addItem} removeItem={removeItem} cart={cart} {...args} />;
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  products: [
+    {
+      descricao: "Bebidas🥤",
+      item: [
+        {
+          id: 23,
+          descricao: "Coca cola lata 350ml",
+          valor_venda: 4,
+        },
+        {
+          id: 32,
+          descricao: "Coca litão",
+          valor_venda: 4,
+        },
+      ],
+    },
+  ],
+};

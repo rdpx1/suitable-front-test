@@ -11,11 +11,15 @@ import useHeaderData from "../../../hooks/useHeaderData";
 const ComponentPage = () => {
   const classes = useStyles();
 
-  const { cart, totalProductQuantity, totalValue, addItem, removeItem, getProductQuantity} = useCart();
+  const {
+    cart,
+    totalProductQuantity,
+    totalValue,
+    addItem,
+    removeItem,
+  } = useCart();
   const { productListFinal, loading } = useProduct();
   const { results } = useHeaderData();
-
-
 
   return (
     <>
@@ -25,10 +29,9 @@ const ComponentPage = () => {
           textCardapio="Cardápio"
           products={productListFinal}
           loading={loading}
-          
           addItem={addItem}
           removeItem={removeItem}
-          getProductQuantity={getProductQuantity}
+          cart={cart}
         />
         <Footer
           totalProductQuantity={totalProductQuantity}

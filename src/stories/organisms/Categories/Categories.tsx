@@ -19,7 +19,7 @@ const Categories = ({
   loading,
   addItem,
   removeItem,
-  getProductQuantity
+  cart
 }: CardapioProps) => {
   const classes = useStyles();
 
@@ -47,7 +47,7 @@ const Categories = ({
                       key={item.id}
                       addItem={addItem}
                       removeItem={removeItem}
-                      getProductQuantity={getProductQuantity}
+                      cart={cart}
                     />
                   </AccordionDetails>
                 );
@@ -60,5 +60,6 @@ const Categories = ({
     </>
   );
 };
+
 
 export default Categories;

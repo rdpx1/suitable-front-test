@@ -28,6 +28,7 @@ export default function useCart() {
           return cartItem;
         });
         setCart(newCart);
+        console.log(cart);
       }
     },
     [cart]
@@ -51,14 +52,14 @@ export default function useCart() {
     [cart]
   );
 
-  const getProductQuantity = useCallback(
-    (product: Product) => {
-      cart.find((item) => item.id === product.id)
-      console.log(cart)
-      // return cart.quantity ?? 0
-    },
-    []
-  );
+  // const getProductQuantity = useCallback(
+  //   (product: Product) => {
+  //     cart.find((item) => item.id === product.id)
+  //     console.log(cart)
+  //     // return cart.quantity ?? 0
+  //   },
+  //   []
+  // );
 
   return {
     cart,
@@ -66,6 +67,6 @@ export default function useCart() {
     totalValue,
     addItem,
     removeItem,
-    getProductQuantity
+    // getProductQuantity
   };
 }

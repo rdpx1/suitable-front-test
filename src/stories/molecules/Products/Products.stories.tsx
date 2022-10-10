@@ -1,32 +1,25 @@
-// import React from 'react';
+import React, { useState } from "react";
+import { Story } from "@storybook/react";
+import Products from "./Products";
+import useCart from "../../../hooks/cart/useCart";
+import { ProductItemProps } from "./Products.types";
 
-// import { Story } from "@storybook/react";
-// import Product from './Product';
-// import { Product } from './Product.types';
+export default {
+  title: "Products",
+  component: Products,
+};
 
-// export default {
-//     title: "Product",
-//     component: Product
-// }
-
-// const Template: Story<Product> = (args) => {
-
-
-
-//     return (
-//         <Product {...args}
-//             // item={item}
-//             // addItem={addItem}
-//             // removeItem={removeItem}
-//         />)
-// }
-
-// export const Default = Template.bind({});
-// Default.args = {
-//     item: { 
-//         descricao: "Coca cola lata 350ml",
-//         valor_venda: 4,
-//     },
+const Template: Story<ProductItemProps> = (args) => {
+  const { cart, addItem, removeItem } = useCart();
 
 
-// };
+  return <Products addItem={addItem} removeItem={removeItem} cart={cart}{...args} />;
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  item: {
+    descricao: "Coca cola lata 350ml",
+    valor_venda: 4,
+  },
+};

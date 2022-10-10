@@ -12,7 +12,7 @@ const Cardapio = ({
   loading,
   addItem,
   removeItem,
-  getProductQuantity
+  cart
 }: CardapioProps) => {
   const classes = useStyles();
 
@@ -29,7 +29,7 @@ const Cardapio = ({
           loading={loading}
           addItem={addItem}
           removeItem={removeItem}
-          getProductQuantity={getProductQuantity}
+          cart={cart}
         />
       </div>
     </>
