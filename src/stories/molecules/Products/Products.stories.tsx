@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import Products from "./Products";
 import useCart from "../../../hooks/cart/useCart";

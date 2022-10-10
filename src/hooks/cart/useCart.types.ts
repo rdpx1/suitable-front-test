@@ -4,7 +4,6 @@ export type Product = {
   quantity: number;
   valor_venda: number;
   categoria_id?: number;
-  getProductQuantity?: (item: Product) => React.ReactNode;
 };
 
 export interface CartProps {

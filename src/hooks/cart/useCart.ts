@@ -28,7 +28,6 @@ export default function useCart() {
           return cartItem;
         });
         setCart(newCart);
-        console.log(cart);
       }
     },
     [cart]
