@@ -1,4 +1,3 @@
-import React from "react";
 import { CartProps, Product } from "../../../hooks/cart/useCart.types";
 
 export interface ProductItemProps {
